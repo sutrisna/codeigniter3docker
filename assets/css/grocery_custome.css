@@ -1,0 +1,105 @@
+.flexigrid div.form-div {
+    font-family: Arial, Helvetica, sans-serif;
+    border-top: 1px solid grey;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 8px;
+}
+
+.main-table-box{
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.flexigrid .crud-form .table{
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.flexigrid div.form-div textarea {
+    border-radius: 10px;
+    width: 270px;
+}
+
+.flexigrid div.form-div #field-jk {
+    /* width: 500px; */
+}
+
+.flexigrid div.form-div input[type="text"],
+.flexigrid div.form-div input[type="password"] {
+    width: 270px;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+}
+
+.flexigrid div.tDiv {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.flexigrid div.pDiv {
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+}
+
+.main-table-box form {
+    border: 'none';
+}
+
+#ajax_list {
+    border-top: 1px solid grey;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 8px;
+}
+
+@media only screen and (max-width: 650px) {
+    .card .card-title {
+        font-size: 12pt;
+    }
+
+    .flexigrid div.fbutton span.add {
+        font-size: 8pt;
+    }
+
+    p.card-description {
+        display: none;
+    }
+
+    #reader__dashboard_section_swaplink {
+        font-size: 9pt;
+    }
+
+    #reader__dashboard_section_csr button {
+        font-size: 9pt;
+    }
+
+    #reader__dashboard_section_fsr {
+        font-size: 9pt;
+    }
+
+    #scan-result-close {
+        font-size: 9pt;
+    }
+
+    .flexigrid div.sDiv2 input,
+    .flexigrid div.sDiv2 select {
+        vertical-align: middle;
+        width: 137px;
+    }
+
+    .flexigrid .btn:first-child {
+        width: 138px;
+    }
+
+    #save-and-go-back-button {
+        font-size: 9pt;
+    }
+
+    #form-button-save {
+        font-size: 9pt;
+    }
+
+    #cancel-button {
+        font-size: 9pt;
+    }
+}
