@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Sekolah Idaman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="apple-touch-icon" sizes="57x57" href="<?= base_url('assets/favicon/apple-icon-57x57.png') ?>">
@@ -42,7 +42,7 @@
             <form action="<?php echo site_url('auth/login'); ?>" method="post">
             <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" 
                 value="<?php echo $this->security->get_csrf_hash(); ?>">
-                <h3>Login Form</h3>
+                <h3>Selamat Datang</h3>
                 <?php if (isset($error)): ?>
                     <div style="color: red;">
                         <p><?php echo $error; ?></p>
@@ -57,7 +57,7 @@
                     <i class="zmdi zmdi-lock"></i>
                 </div>
 
-                <button type="submit" id="loginBtn">Sign In
+                <button type="submit" id="loginBtn">Masuk
                     <i class="zmdi zmdi-arrow-right"></i>
                 </button>
             </form>

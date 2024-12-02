@@ -72,11 +72,13 @@
                         <i class="fa fa-tachometer-alt me-2"></i>Dashboard
                     </a>
 
-                    <div class="nav-item dropdown <?= set_dropdown_active(['master/user', 'typography', 'element']); ?>">
-                        <a href="#" class="nav-link dropdown-toggle <?= set_dropdown_active_header(['master/user', 'typography', 'element']); ?>" data-bs-toggle="dropdown">
+                    <a href="<?php echo base_url('master/user'); ?>" class="nav-item nav-link <?= set_active('master/user'); ?>"><i class="fa fa-users me-2"></i>Accounts</a>
+
+                    <div class="nav-item dropdown <?= set_dropdown_active(['typography', 'element']); ?>">
+                        <a href="#" class="nav-link dropdown-toggle <?= set_dropdown_active_header(['typography', 'element']); ?>" data-bs-toggle="dropdown">
                             <i class="fa fa-user-edit me-2"></i>Data Master
                         </a>
-                        <div class="dropdown-menu bg-transparent border-0 <?= set_dropdown_active(['master/user', 'typography', 'element'], 'show') ?>">
+                        <div class="dropdown-menu bg-transparent border-0 <?= set_dropdown_active(['typography', 'element'], 'show') ?>">
                             <a href="<?= base_url('master/user'); ?>" class="dropdown-item <?= set_active('master/user'); ?>">Guru</a>
                             <a href="<?= base_url('typography'); ?>" class="dropdown-item">Siswa</a>
                             <a href="<?= base_url('element'); ?>" class="dropdown-item">Kelas</a>
@@ -95,7 +97,7 @@
                     <a href="<?php echo base_url('master/user'); ?>" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-sign-out-alt me-2"></i>Logout</a>
+                    <a href="<?php echo base_url('auth/logout'); ?>" class="nav-item nav-link"><i class="fa fa-sign-out-alt me-2"></i>Logout</a>
                 </div>
             </nav>
         </div>

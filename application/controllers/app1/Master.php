@@ -34,7 +34,8 @@ class Master extends CI_Controller
         // $crud->where('role <', 'superadmin');
         $crud->columns(['full_name','role','status','created_at','updated_at']);
         $crud->edit_fields('full_name', 'role', 'status');
-        $crud->required_fields('full_name', 'role', 'status');
+        $crud->add_fields('full_name','username','password','role','email','phone_number');
+        $crud->required_fields('full_name', 'role', 'status','username','password');
 
         $crud->field_type(
             'role',
