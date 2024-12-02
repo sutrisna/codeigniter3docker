@@ -36,6 +36,7 @@ class Master extends CI_Controller
         $crud->edit_fields('full_name', 'role', 'status');
         $crud->add_fields('full_name','username','password','role','email','phone_number');
         $crud->required_fields('full_name', 'role', 'status','username','password');
+        $crud->unique_fields(array('phone_number','email','username'));
 
         $crud->field_type(
             'role',

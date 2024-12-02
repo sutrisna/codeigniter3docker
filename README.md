@@ -1,50 +1,65 @@
-Build Image Baru
-docker build -t <docker_hub_username>/<image_name>:<new_tag> .
-docker build -t myusername/myapp:v2 .
-
-<docker_hub_username>: Nama pengguna Docker Hub Anda.
-<image_name>: Nama image yang digunakan.
-<new_tag>: Tag baru untuk versi image (misalnya v2, latest, dll.).
-
-Push Image ke Docker Hub
-docker push <docker_hub_username>/<image_name>:<new_tag>
-docker push myusername/myapp:v2
-
-Check container list
-docker ps
-docker stop <container_id>
-docker rm <container_id>
-
-Tarik image terbaru dari Docker Hub:
-docker pull <docker_hub_username>/<image_name>:<new_tag>
-docker pull myusername/myapp:v2
-
-Jalankan container baru dengan image yang diperbarui:
-docker-compose pull
+# Absensi Sekolah
+Palikasi absensi sekolah menggunakan codeigniter 3 dan docker dan juga di sinkronisasi dengan microcontroller
+# Install Project
+- Clone this project:
+```bash
+git clone https://github.com/sutrisna/codeigniter3docker.git
+cd codeigniter3docker
+```
+# Build & Run using Docker
+```bash
 docker-compose up -d
+```
+# Stop Service using Docker
+```bash
+docker-compose down
+```
+# Re-Build using Docker [Jika ada update config atau code di local]
+```bash
+docker-compose up -d --build
+```
+# Login to Terminal using Docker
+```bash
+docker exec -it CONTAINER ID /bin/bash
+```
+# Docker upload to Docker Hub Repo
+```bash
+- docker tag local_image_name username/repository_name:tag
+- docker push username/repository_name:tag
+```
+## Detail
+- username adalah username Docker Hub Anda.
+- repository_name adalah nama yang Anda inginkan untuk repository di Docker Hub.
+- tag adalah versi dari image (misalnya, latest, v1.0, dll).
+- Titik . di akhir perintah menunjukkan bahwa Dockerfile berada di direktori saat ini.
 
+# Docker List, Stop & Remove Container
+```bash
+- docker ps
+- docker stop CONTAINER ID
+- docker rm CONTAINER ID
+```
+# Docker Remove Images
+```bash
+- docker rmi IMAGE ID
+- docker rmi IMAGE ID -f // force
+```
+# Docker Remove Volumes
+```bash
+- docker volume list
+- docker volume rm VOLUME NAME
+```
+# Docker Pull & Running with Team
+```bash
+- docker pull username/myapp:v1.0
+- docker run -d -p 8080:80 username/myapp:v1.0
+```
+# Run migration
+```bash
+site/migrationgenerator/run
+```
+- OR
+```bash
+site/migrationgenerator/run/[version]
+```
 
-
-
-
-CREATE TABLE users (
-    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,           -- Primary Key (Unique Identifier)
-    username VARCHAR(50) NOT NULL UNIQUE,                -- Username, harus unik
-    email VARCHAR(100) DEFAULT NULL,                  -- Email, harus unik
-    password VARCHAR(255) NOT NULL,                      -- Password, di-hash (hash bcrypt, argon2, dll.)
-    full_name VARCHAR(100) DEFAULT NULL,                 -- Nama lengkap user
-    phone_number VARCHAR(15) DEFAULT NULL UNIQUE,               -- Nomor telepon, opsional
-    role ENUM('admin', 'user', 'superuser') DEFAULT 'user', -- Role user, dengan default 'user'
-    status ENUM('active', 'inactive', 'banned') DEFAULT 'active', -- Status akun
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,       -- Waktu akun dibuat
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- Waktu terakhir diupdate
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-
-CREATE TABLE IF NOT EXISTS `ci_sessions` (
-        `id` varchar(128) NOT NULL,
-        `ip_address` varchar(45) NOT NULL,
-        `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
-        `data` blob NOT NULL,
-        KEY `ci_sessions_timestamp` (`timestamp`)
-);
