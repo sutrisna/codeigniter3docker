@@ -26,7 +26,7 @@ docker-compose up -d --build
 ## Gunakan `docker-compose up -d --build` Jika:
 - Anda ingin menjalankan seluruh aplikasi lengkap (misalnya, dengan database, cache, dll.) yang didefinisikan di file `docker-compose.yml`.
 - Anda mengelola aplikasi multi-container dan ingin semuanya berjalan secara otomatis sesuai konfigurasi.
-## Gunakan docker build Jika:
+## Gunakan `docker build` Jika:
 - Anda hanya ingin membangun/memperbarui image Docker untuk diunggah ke registry (misalnya, Docker Hub).
 - Tidak perlu menjalankan container setelah membangun image.
 ## Login to Terminal using Docker
