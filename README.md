@@ -6,7 +6,7 @@ Palikasi absensi sekolah menggunakan codeigniter 3 dan docker dan juga di sinkro
 git clone https://github.com/sutrisna/codeigniter3docker.git
 cd codeigniter3docker
 ```
-## Build & Run using Docker
+## Run via Docker Compose
 ```bash
 docker-compose up -d
 ```

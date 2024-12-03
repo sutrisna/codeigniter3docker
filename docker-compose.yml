@@ -13,10 +13,6 @@ services:
     environment:
       - APACHE_RUN_USER=www-data
       - APACHE_RUN_GROUP=www-data
-      - DB_HOST=db
-      - DB_NAME=sekolah
-      - DB_USER=admin_sekolah
-      - DB_PASSWORD=admin_sekolah.password
 
   db:
     image: mysql:5.7
@@ -32,11 +28,5 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql 
       - ./sekolah_backup.sql:/docker-entrypoint-initdb.d/sekolah_backup.sql  # Ini untuk load data awal
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 30s
-      retries: 5
-      start_period: 30s
-      timeout: 10s
 volumes:
   mysql_data:
