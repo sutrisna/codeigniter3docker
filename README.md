@@ -14,10 +14,21 @@ docker-compose up -d
 ```bash
 docker-compose down
 ```
-# Re-Build using Docker [Jika ada update config atau code di local]
+# Re-Build using Docker via Docker Compose [Jika ada update config atau code di local]
 ```bash
 docker-compose up -d --build
 ```
+# OR Re-Build using Docker via DockerFile [Jika ada update config atau code di local]
+```bash
+- docker build -t username/myapp:v2.0 .
+- docker push username/myapp:v2.0
+```
+# Gunakan `docker-compose up -d --build` Jika:
+- Anda ingin menjalankan seluruh aplikasi lengkap (misalnya, dengan database, cache, dll.) yang didefinisikan di file `docker-compose.yml`.
+- Anda mengelola aplikasi multi-container dan ingin semuanya berjalan secara otomatis sesuai konfigurasi.
+# Gunakan docker build Jika:
+- Anda hanya ingin membangun/memperbarui image Docker untuk diunggah ke registry (misalnya, Docker Hub).
+- Tidak perlu menjalankan container setelah membangun image.
 # Login to Terminal using Docker
 ```bash
 docker exec -it CONTAINER ID /bin/bash
