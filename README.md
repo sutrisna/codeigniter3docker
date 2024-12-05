@@ -18,7 +18,7 @@ docker-compose down
 ```bash
 docker-compose up -d --build
 ```
-## OR Re-Build using Docker via DockerFile [Jika ada update config atau code di local]
+## OR Re-Build using Docker via DockerFile & Push ke Docker Hub [Jika ada update config atau code di local dan update versi image]
 ```bash
 - docker build -t username/myapp:v2.0 .
 - docker push username/myapp:v2.0
@@ -33,7 +33,7 @@ docker-compose up -d --build
 ```bash
 docker exec -it CONTAINER ID /bin/bash
 ```
-## Docker upload to Docker Hub Repo
+## Docker upload to Docker Hub Repo Jika Baru
 ```bash
 - docker tag local_image_name username/repository_name:tag
 - docker push username/repository_name:tag
@@ -65,12 +65,33 @@ docker exec -it CONTAINER ID /bin/bash
 - docker pull username/myapp:v1.0
 - docker run -d -p 8080:80 username/myapp:v1.0
 ```
+## Create Network on Docker
+```bash
+docker network create nama-jaringan
+```
+## Check Network on Docker
+```bash
+docker network inspect nama-jaringan
+```
+## Add Container to Network on Docker
+```bash
+docker network connect nama-jaringan nama-container
+```
+## Run Image with spesific network
+```bash
+docker run -d --name mysql-container --network nama-jaringan -e MYSQL_ROOT_PASSWORD=root mysql:5.7
+```
+
 ## Run migration
 ```bash
-site/migrationgenerator/run
+site/migrasi
 ```
 - OR
 ```bash
-site/migrationgenerator/run/[version]
+site/migrasi/[version]
+```
+## Run Data Faker
+```bash
+site/faker
 ```
 

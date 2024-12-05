@@ -54,6 +54,8 @@ $route['default_controller'] = 'Login';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['migrasi/(:any)? '] = '/MigrationGenerator/run/$1';
+$route['fake'] = '/FakerData/generate';
 $route['dashboard'] = $prefix.'/dashboard';
 $route['auth/logout'] = $prefix.'/auth/logout';
 $route['auth/login'] = $prefix.'/auth/login';

@@ -13,7 +13,7 @@ class FakerData extends CI_Controller {
             $data[] = [
                 'username' => 'admin',
                 'email' => $faker->email,
-                'password' => md5('admin'),
+                'password' => password_hash('admin', PASSWORD_BCRYPT),
                 'full_name' => $faker->name,
                 'phone_number' => $faker->phoneNumber,
                 'role' => 'superuser',

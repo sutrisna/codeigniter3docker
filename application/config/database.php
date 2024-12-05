@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'db',
-	'username' => 'admin_sekolah',
-	'password' => 'admin_sekolah.password',
+	'hostname' => '172.17.0.1',
+	'username' => 'root',
+	'password' => 'admin',
 	'database' => 'sekolah',
 	'port'     => 3306,
 	'dbdriver' => 'mysqli',

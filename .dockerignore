@@ -19,6 +19,9 @@
 **/node_modules
 **/npm-debug.log
 **/obj
+**/vendor
+**/composer.json
+**/composer.lock
 **/secrets.dev.yaml
 **/values.dev.yaml
 LICENSE
